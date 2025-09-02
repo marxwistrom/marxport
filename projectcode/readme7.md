@@ -521,8 +521,10 @@ This project demonstrates:
 
 ## 🔗 Repository
 
-**GitHub**: [Real-time Chat Backend](https://github.com/marxwistrom/chat-backend)
+**GitHub**:  Not Official - YET
+
 
 ---
 
 *Part of Marx Wiström's Backend Development Portfolio*
+
