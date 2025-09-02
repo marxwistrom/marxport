@@ -247,8 +247,9 @@ This project demonstrates:
 
 ## 🔗 Repository
 
-**GitHub**: [E-Commerce REST API](https://github.com/marxwistrom/ecommerce-api)
+**GitHub**:  Not Official - YET
 
 ---
 
 *Part of Marx Wiström's Backend Development Portfolio*
+
