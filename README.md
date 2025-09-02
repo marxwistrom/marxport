@@ -262,10 +262,11 @@ For questions about this project or collaboration opportunities:
 
 - **Email**: marxwistrom@gmail.com
 - **Portfolio**: [Live Website](https://marxwistrom.github.io/marx-edu/index.html)
-- **GitHub**: [Project Repository](https://github.com/marxwistrom/marx-edu/)
+- **GitHub**: [Project Repository](https://github.com/marxwistrom/marxport/)
 
 ---
 
 *Built with ❤️ for showcasing backend web development skills*
+
 
 
