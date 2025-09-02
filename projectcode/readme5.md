@@ -392,8 +392,10 @@ This project demonstrates:
 
 ## 🔗 Repository
 
-**GitHub**: [Authentication Microservice](https://github.com/marxwistrom/auth-service)
+**GitHub**:  Not Official - YET
+
 
 ---
 
 *Part of Marx Wiström's Backend Development Portfolio*
+
