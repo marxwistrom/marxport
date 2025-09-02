@@ -170,8 +170,9 @@ This project demonstrates:
 
 ## 🔗 Repository
 
-**GitHub**: [Analytics Data Backend](https://github.com/marxwistrom/analytics-backend)
+**GitHub**: Not Official - YET
 
 ---
 
 *Part of Marx Wiström's Backend Development Portfolio*
+
