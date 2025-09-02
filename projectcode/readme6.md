@@ -484,8 +484,10 @@ This project demonstrates:
 
 ## 🔗 Repository
 
-**GitHub**: [Blog Content API](https://github.com/marxwistrom/blog-api)
+**GitHub**:  Not Official - YET
+
 
 ---
 
 *Part of Marx Wiström's Backend Development Portfolio*
+
