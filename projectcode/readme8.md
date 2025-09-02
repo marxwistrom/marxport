@@ -516,8 +516,10 @@ This project demonstrates:
 
 ## 🔗 Repository
 
-**GitHub**: [Payment Processing Service](https://github.com/marxwistrom/payment-service)
+**GitHub**:  Not Official - YET
+
 
 ---
 
 *Part of Marx Wiström's Backend Development Portfolio*
+
