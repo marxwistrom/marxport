@@ -112,8 +112,9 @@ This project demonstrates:
 
 ## 🔗 Repository
 
-**GitHub**: [Inventory Database System](https://github.com/marxwistrom/inventory-db)
+**GitHub**: Not Official - YET
 
 ---
 
 *Part of Marx Wiström's Backend Development Portfolio*
+
