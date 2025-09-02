@@ -6,13 +6,13 @@ A modern, responsive portfolio website showcasing backend web development projec
 
 This portfolio website serves as a professional showcase for Marx Wiström's backend development expertise during his educational journey. The site demonstrates modern web development practices, clean code architecture, and user-centered design principles.
 
-**Live Demo:** [Portfolio Website](https://marxwistrom.github.io/marx-edu/index.html)
+**Live Demo:** [Portfolio Website](https://marxwistrom.github.io/marxport/index.html)
 
 ## ✨ Features
 
 ### 🎨 Design & User Experience
 - **Responsive Design**: Mobile-first approach with seamless desktop scaling
-- **Dark Purple Theme**: Professional masculine color scheme with modern aesthetics
+- **Dark Purple Theme**: Professional color scheme with modern aesthetics
 - **Smooth Animations**: CSS transitions and JavaScript-powered scroll effects
 - **Interactive Elements**: Hover effects, loading states, and visual feedback
 - **Accessibility**: Semantic HTML and keyboard navigation support
@@ -267,4 +267,5 @@ For questions about this project or collaboration opportunities:
 ---
 
 *Built with ❤️ for showcasing backend web development skills*
+
 
