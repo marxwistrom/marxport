@@ -94,15 +94,7 @@ The contact form uses EmailJS for client-side email sending. To activate:
   - `{{message}}` - Message content
   - `{{reply_to}}` - Reply address
 
-### 2. Update Configuration
-Replace placeholders in `src/js/script.js`:
-```javascript
-// Line ~400: Replace with your EmailJS public key
-emailjs.init('zJynXIdtKz_v05V2G');
 
-// Line ~450: Replace with your service and template IDs
-emailjs.send('service_qhpgfpq', 'template_nmv9wzv', templateParams)
-```
 
 ### 3. Email Template Example
 ```
@@ -275,3 +267,4 @@ For questions about this project or collaboration opportunities:
 ---
 
 *Built with ❤️ for showcasing backend web development skills*
+
