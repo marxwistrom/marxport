@@ -1,0 +1,1102 @@
+/* ============================================
+   CSS RESET AND BASE STYLES
+   ============================================ */
+
+/* Universal Box Model Reset - Ensures consistent sizing across all elements */
+* {
+    margin: 0;          /* Remove default margins from all elements */
+    padding: 0;         /* Remove default padding from all elements */
+    box-sizing: border-box;  /* Include padding and border in element width/height calculations */
+}
+
+/* Body Element - Sets global typography and background */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    /* Font stack: Custom font (Inter) with system font fallbacks for performance */
+    line-height: 1.55;          /* Tighter line spacing for higher density */
+    color: #e2e8f0;            /* Light gray text color for dark theme readability */
+    background-color: #0f0f23;  /* Very dark blue background - main theme color */
+    font-size: 16px;           /* Smaller base font size for higher resolution */
+    font-weight: 400;          /* Normal font weight as default */
+    letter-spacing: 0.005em;   /* Tighter letter spacing for sharper appearance */
+    -webkit-font-smoothing: antialiased;      /* Smoother font rendering on WebKit browsers */
+    -moz-osx-font-smoothing: grayscale;       /* Smoother font rendering on Firefox/Mac */
+    text-rendering: optimizeLegibility;       /* Enhanced text rendering quality */
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1; /* Enable kerning, ligatures, and contextual alternates */
+    font-variant-numeric: lining-nums;        /* Professional lining numerals */
+    image-rendering: -webkit-optimize-contrast; /* Sharper image rendering */
+    image-rendering: crisp-edges;             /* Crisp edge rendering */
+}
+
+/* ============================================
+   RESPONSIVE TYPOGRAPHY HIERARCHY
+   ============================================ */
+
+/* Main Heading (H1) - Used for hero title and primary page heading */
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);  /* Enhanced responsive sizing for better impact */
+    font-weight: 800;        /* Extra bold weight for strong visual hierarchy */
+    line-height: 1.05;       /* Tighter line height for better visual balance */
+    letter-spacing: -0.025em; /* Refined negative letter spacing */
+    margin-bottom: 2rem;     /* Increased spacing for better visual separation */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle text shadow for depth */
+}
+
+/* Section Headings (H2) - Used for major section titles */
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);    /* Enhanced responsive sizing */
+    font-weight: 700;        /* Bold weight for strong hierarchy */
+    line-height: 1.15;       /* Optimized line height */
+    letter-spacing: -0.02em; /* Refined negative spacing */
+    margin-bottom: 1.5rem;   /* Increased consistent spacing */
+    color: #ffffff;          /* Pure white for maximum contrast */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle depth enhancement */
+}
+
+/* Section Headings (H3) - Used for skill categories, contact sections */
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);  /* Enhanced responsive subsection heading size */
+    font-weight: 600;        /* Semi-bold weight */
+    line-height: 1.3;        /* Balanced line height */
+    letter-spacing: -0.01em; /* Minimal negative spacing */
+    margin-bottom: 1.25rem;  /* Standard bottom margin */
+    color: #f8fafc;          /* Very light gray, slightly less contrast than H2 */
+}
+
+/* Minor Headings (H4) - Used for smaller content sections */
+h4 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem); /* Smaller responsive heading */
+    font-weight: 600;        /* Semi-bold consistency */
+    line-height: 1.4;        /* More relaxed line height for smaller text */
+    letter-spacing: 0;       /* No letter spacing adjustment needed */
+    margin-bottom: 1rem;     /* Smaller bottom margin */
+    color: #f1f5f9;          /* Light gray for hierarchy differentiation */
+}
+
+/* Small Headings (H5) - Used for labels and minor sections */
+h5 {
+    font-size: clamp(1rem, 2vw, 1.25rem); /* Small heading size */
+    font-weight: 500;        /* Medium weight for subtle emphasis */
+    line-height: 1.5;        /* Standard line height */
+    letter-spacing: 0.01em;  /* Slight positive spacing for readability */
+    margin-bottom: 0.75rem;  /* Minimal bottom spacing */
+    color: #e2e8f0;          /* Standard text color */
+}
+
+/* Body Text (Paragraphs) - Main content text styling */
+p {
+    font-size: clamp(1rem, 1.75vw, 1.125rem); /* Responsive body text size */
+    line-height: 1.6;        /* Comfortable reading line height */
+    letter-spacing: 0.01em; /* Slight spacing for readability */
+    margin-bottom: 1.25rem;   /* Standard paragraph spacing */
+    color: #cbd5e1;          /* Muted gray for body text */
+    font-weight: 400;        /* Normal weight for body text */
+}
+
+/* Lead Text - Larger introductory paragraphs */
+.lead {
+    font-size: clamp(1.25rem, 2.25vw, 1.375rem); /* Larger than body text */
+    line-height: 1.5;        /* Slightly tighter for larger text */
+    letter-spacing: 0.005em; /* Reduced spacing for larger text */
+    font-weight: 300;        /* Lighter weight for elegance */
+    color: #e2e8f0;          /* Brighter than body text */
+    margin-bottom: 2rem;  /* More spacing below lead text */
+}
+
+/* Small Text - Captions, labels, secondary information */
+.small-text {
+    font-size: clamp(0.75rem, 1vw, 0.875rem); /* Smaller responsive text */
+    line-height: 1.5;        /* Maintain readability */
+    letter-spacing: 0.05em;  /* Increased spacing for small text legibility */
+    color: #94a3b8;          /* Muted color for secondary information */
+}
+
+/* Enhanced Section Spacing */
+section {
+    padding: clamp(4rem, 8vw, 8rem) 0;
+    position: relative;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 3vw, 2rem);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    position: relative;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #a855f7, #00bcd4);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.5;
+    color: #94a3b8;
+    font-weight: 300;
+    letter-spacing: 0.025em;
+}
+
+/* ============================================
+   HERO SECTION - Landing Area Design
+   ============================================ */
+
+/* Hero Section Container */
+.hero {
+    min-height: 90vh;          /* Full viewport height for impact */
+    display: flex;              /* Flexbox for vertical centering */
+    align-items: center;        /* Centers content vertically */
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #581c87 100%);
+    /* Diagonal gradient: Dark navy → Medium purple → Dark purple */
+    color: white;               /* White text for contrast against dark background */
+    padding-top: 80px;          /* Offset for fixed navbar height */
+}
+
+/* Hero Grid Layout */
+.hero-container {
+    max-width: 1000px;          /* Consistent with site container width */
+    margin: 0 auto;             /* Centers the hero content */
+    padding: 0 20px;            /* Horizontal padding */
+    display: grid;              /* CSS Grid for two-column layout */
+    grid-template-columns: 1fr 1fr;  /* Equal width columns */
+    gap: 4rem;                  /* Space between text and image columns */
+    align-items: center;        /* Vertically centers grid items */
+}
+
+/* Hero Text Content */
+.hero-content h1 {
+    margin-bottom: 2rem;        /* Space below main heading */
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);  /* Subtle shadow for depth */
+}
+
+/* Hero Subtitle Styling */
+.hero-subtitle {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);  /* Responsive subtitle size */
+    font-weight: 300;           /* Light weight for elegance */
+    line-height: 1.4;           /* Comfortable line spacing */
+    letter-spacing: 0.05em;     /* Increased spacing for style */
+    margin-bottom: 2.5rem;      /* Space before buttons */
+    color: #cbd5e1;             /* Slightly muted white */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);  /* Subtle text shadow */
+}
+
+/* Button Container */
+.hero-buttons {
+    display: flex;              /* Flexbox for button layout */
+    flex-direction: row;        /* Horizontal button arrangement */
+    align-items: center;        /* Vertical alignment */
+    justify-content: center;    /* Centers buttons */
+    gap: 2rem;                  /* Space between buttons */
+    margin-top: 2rem;           /* Top margin */
+    flex-wrap: wrap;            /* Wraps on smaller screens */
+}
+
+/* Hero Image Container */
+.hero-image {
+    display: flex;              /* Flexbox for image centering */
+    justify-content: center;    /* Horizontally centers image */
+    align-items: center;        /* Vertically centers image */
+}
+
+/* Profile Logo Styling */
+.profile-logo {
+    width: 300px;               /* Fixed dimensions for consistency */
+    height: 300px;
+    border-radius: 20px;        /* Rounded corners */
+    object-fit: contain;        /* Maintains aspect ratio */
+    background: rgba(168, 85, 247, 0.1);  /* Subtle purple background */
+    padding: 20px;              /* Internal spacing */
+    backdrop-filter: blur(15px); /* Glassmorphism effect */
+    border: 2px solid rgba(168, 85, 247, 0.3);  /* Purple border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Hover animations */
+}
+
+/* Profile Logo Hover Effect */
+.profile-logo:hover {
+    transform: scale(1.05);     /* Slight scale increase */
+    box-shadow: 0 20px 40px rgba(168, 85, 247, 0.3);  /* Enhanced shadow */
+}
+
+/* Fallback Profile Placeholder */
+.profile-placeholder {
+    width: 300px;               /* Same size as logo */
+    height: 300px;
+    border-radius: 50%;         /* Circular shape */
+    background: rgba(168, 85, 247, 0.1);  /* Purple background */
+    display: flex;              /* Flexbox for centering */
+    align-items: center;        /* Centers content */
+    justify-content: center;
+    font-size: 6rem;            /* Large icon/text size */
+    color: rgba(192, 132, 252, 0.8);  /* Light purple color */
+    backdrop-filter: blur(15px); /* Glassmorphism effect */
+    border: 2px solid rgba(168, 85, 247, 0.3);  /* Matching border */
+}
+
+/* ============================================
+   ADVANCED BUTTON SYSTEM WITH ANIMATIONS
+   ============================================ */
+
+/* Professional Button Styling */
+.btn {
+    display: block;             /* Block display for consistent sizing */
+    position: relative;         /* Needed for pseudo-element positioning */
+    width: 200px;               /* Professional button width for better presence */
+    height: 60px;               /* Professional button height for better interaction */
+    text-transform: uppercase;   /* Uppercase text for impact */
+    text-decoration: none;      /* Remove link underlines */
+    text-align: center;         /* Center button text */
+    color: transparent;         /* Text color handled by gradient */
+    line-height: 60px;          /* Vertical centering of text */
+    font-family: 'Inter', sans-serif;  /* Consistent font */
+    font-size: 15px;            /* Professional font size for better readability */
+    font-weight: 600;           /* Semi-bold weight */
+    z-index: 1;                 /* Ensures text appears above background */
+    margin: 0 auto 1.5rem;        /* Centers button with professional bottom margin */
+    border-radius: 6px;         /* Professional rounded corners */
+    overflow: hidden;           /* Clean edges */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Professional easing */
+}
+
+/* Animated Border Effect - Creates moving gradient border */
+.btn::before {
+    content: '';                /* Empty content for pseudo-element */
+    position: absolute;         /* Positioned relative to button */
+    top: 0; right: 0; bottom: 0; left: 0;  /* Covers entire button */
+    margin: auto;               /* Centers the pseudo-element */
+    background: linear-gradient(120deg, #7c3aed, #a855f7, #7c3aed);
+    /* Three-color gradient: Purple → Light Purple → Purple */
+    background-size: 600% 600%; /* Large background for animation */
+    clip-path: polygon(0% 100%, 6px 100%, 6px 6px, 192px 6px, 192px 54px, 6px 54px, 6px 100%, 100% 100%, 100% 0%, 0% 0%);
+    /* Professional clip-path creates animated border effect */
+    animation: gradient 3s ease-in-out infinite, border 1s forwards ease-in-out reverse;
+    /* Two animations: gradient movement and border drawing */
+}
+
+/* Button Text Gradient */
+.btn span {
+    display: block;             /* Block display for styling */
+    background: linear-gradient(120deg, #7c3aed, #a855f7, #7c3aed);
+    /* Same gradient as border for consistency */
+    background-size: 600% 600%; /* Large background for animation */
+    -webkit-background-clip: text;      /* Clips background to text (WebKit) */
+    -webkit-text-fill-color: transparent;  /* Makes text transparent to show gradient */
+    background-clip: text;      /* Standard property for text clipping */
+    animation: gradient 3s ease-in-out infinite;  /* Matches border animation */
+    font-weight: 600;           /* Professional weight */
+    letter-spacing: 0.05em;     /* Professional letter spacing */
+}
+
+/* Primary Button Color */
+.btn-primary {
+    color: #7c3aed;            /* Purple color fallback */
+}
+
+/* Secondary Button Color */
+.btn-secondary {
+    color: #7c3aed;            /* Same purple for consistency */
+}
+
+/* ============================================
+   KEYFRAME ANIMATIONS
+   ============================================ */
+
+/* Gradient Animation - Creates moving color effect */
+@keyframes gradient {
+    0% { background-position: 14% 0%; }      /* Start position */
+    50% { background-position: 87% 100%; }   /* Middle position */
+    100% { background-position: 14% 0%; }    /* End position (loops) */
+}
+
+/* Border Drawing Animation - Creates animated border reveal effect */
+@keyframes border {
+    0% { 
+        clip-path: polygon(0% 100%, 6px 100%, 6px 6px, 192px 6px, 192px 54px, 192px 54px, 192px 100%, 100% 100%, 100% 0%, 0% 0%); 
+    }
+    25% { 
+        clip-path: polygon(0% 100%, 6px 100%, 6px 6px, 192px 6px, 192px 54px, 192px 54px, 192px 54px, 192px 54px, 100% 0%, 0% 0%); 
+    }
+    50% { 
+        clip-path: polygon(0% 100%, 6px 100%, 6px 6px, 192px 6px, 192px 6px, 192px 6px, 192px 6px, 192px 6px, 100% 0%, 0% 0%); 
+    }
+    75% { 
+        clip-path: polygon(0% 100%, 6px 100%, 6px 6px, 6px 6px, 6px 6px, 6px 6px, 6px 6px, 6px 6px, 6px 0%, 0% 0%); 
+    }
+    100% { 
+        clip-path: polygon(0% 100%, 6px 100%, 6px 100%, 6px 100%, 6px 100%, 6px 100%, 6px 100%, 6px 100%, 6px 100%, 0% 100%); 
+    }
+}
+
+/* ============================================
+   NAVIGATION SYSTEM
+   ============================================ */
+
+/* Fixed Navigation Bar - Stays at top during scroll */
+.navbar {
+    position: fixed;             /* Fixed positioning keeps navbar at top */
+    top: 0;                     /* Positioned at very top of viewport */
+    width: 100%;                /* Full width across screen */
+    background: rgba(15, 15, 35, 0.95);  /* Semi-transparent dark background */
+    backdrop-filter: blur(15px); /* Modern blur effect for glassmorphism */
+    z-index: 1000;              /* High z-index ensures navbar stays above other content */
+    padding: 1rem 0;            /* Vertical padding for navbar height */
+    transition: all 0.3s ease;  /* Smooth transitions for dynamic effects */
+    border-bottom: 1px solid rgba(124, 58, 237, 0.2);  /* Subtle purple border */
+}
+
+/* Navigation Container - Centers and constrains navbar content */
+.nav-container {
+    max-width: 1000px;          /* Matches main container width */
+    margin: 0 auto;             /* Centers the navigation */
+    padding: 0 20px;            /* Horizontal padding */
+    display: flex;              /* Flexbox for horizontal layout */
+    justify-content: space-between;  /* Logo left, menu right */
+    align-items: center;        /* Vertically centers all items */
+}
+
+/* Logo Section */
+.nav-logo {
+    display: flex;              /* Flexbox for logo alignment */
+    align-items: center;        /* Vertically centers logo content */
+}
+
+/* Logo Text Styling */
+.nav-logo .logo-text {
+    font-size: 1.25rem;         /* Slightly larger than body text */
+    font-weight: 600;           /* Semi-bold for brand emphasis */
+    color: #ffffff;             /* Pure white for maximum contrast */
+    margin: 0;                  /* Remove default heading margins */
+    text-shadow: 0 0 15px rgba(124, 58, 237, 0.5);  /* Purple glow effect */
+    transition: all 0.2s ease;  /* Smooth hover transitions */
+}
+
+/* Logo Hover Effect */
+.nav-logo .logo-text:hover {
+    text-shadow: 0 0 20px rgba(124, 58, 237, 0.8);  /* Enhanced glow on hover */
+    color: #e2e8f0;             /* Slightly dimmed text */
+}
+
+/* Logo Link Styling */
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.logo-link:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+.logo-link:hover .quantum-title {
+    text-shadow: 0 0 30px rgba(124, 58, 237, 0.8), 0 0 40px rgba(168, 85, 247, 0.5);
+}
+
+/* Main Navigation Menu */
+.nav-menu {
+    display: flex;              /* Horizontal flexbox layout */
+    list-style: none;           /* Remove bullet points */
+    gap: 2rem;                  /* Space between menu items */
+}
+
+/* Navigation Links */
+.nav-link {
+    text-decoration: none;      /* Remove underlines */
+    color: #e2e8f0;            /* Light gray text */
+    font-weight: 500;          /* Medium weight for readability */
+    transition: color 0.3s ease;  /* Smooth color transitions */
+    position: relative;         /* Needed for ::after pseudo-element */
+}
+
+/* Link Hover Color */
+.nav-link:hover {
+    color: #7c3aed;            /* Purple color on hover */
+}
+
+/* Animated Underline Effect */
+.nav-link::after {
+    content: '';               /* Empty content for decorative line */
+    position: absolute;        /* Positioned relative to link */
+    width: 0;                  /* Starts with no width */
+    height: 2px;               /* Thin underline */
+    bottom: -5px;              /* Positioned below text */
+    left: 0;                   /* Starts from left edge */
+    background-color: #7c3aed; /* Purple underline color */
+    transition: width 0.3s ease; /* Animates width change */
+}
+
+/* Underline Animation on Hover */
+.nav-link:hover::after {
+    width: 100%;               /* Expands to full width on hover */
+}
+
+/* Mobile Hamburger Menu */
+.hamburger {
+    display: none;             /* Hidden on desktop */
+    flex-direction: column;    /* Vertical stack of bars */
+    cursor: pointer;           /* Indicates clickable element */
+}
+
+/* Hamburger Menu Bars */
+.bar {
+    width: 25px;               /* Fixed width for consistency */
+    height: 3px;               /* Thickness of each bar */
+    background-color: #e2e8f0; /* Light gray color */
+    margin: 3px 0;             /* Vertical spacing between bars */
+    transition: 0.3s;          /* Smooth animation for hamburger transformation */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: #0f0f23;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
+        padding: 2rem 0;
+        border-top: 1px solid rgba(168, 85, 247, 0.2);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.5rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .about-stats {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        padding: 0 1rem;
+    }
+    
+    .project-card {
+        min-height: 350px;
+        margin-bottom: 1.25rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .projects-filter {
+        justify-content: center;
+    }
+    
+    .filter-btn {
+        font-size: 0.875rem;
+        padding: 6px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.875rem;
+    }
+    
+    .profile-logo {
+        width: 200px;
+        height: 200px;
+        padding: 15px;
+    }
+    
+    .profile-placeholder {
+        width: 200px;
+        height: 200px;
+        font-size: 4rem;
+    }
+    
+    .about-stats {
+        flex-direction: column;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #374151;
+    border-top: 3px solid #7c3aed;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* About Section */
+.about {
+    background-color: #1a1a2e;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text {
+    margin-bottom: 2.5rem;
+}
+
+.about-text p {
+    margin-bottom: 2rem;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.7;
+    color: #e2e8f0;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(168, 85, 247, 0.4);
+}
+
+.stat-number {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #a855f7;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.stat-label {
+    font-size: clamp(0.875rem, 1.25vw, 1rem);
+    color: #94a3b8;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Projects Section */
+.projects {
+    background-color: #0f0f23;
+}
+
+.projects-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 15px;
+    border: 1.5px solid #374151;
+    background: #1f2937;
+    color: #9ca3af;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: #7c3aed;
+    color: white;
+    border-color: #7c3aed;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.75rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.project-card {
+    background: #16213e;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    animation: pulse 3s ease-in-out infinite;
+    height: fit-content;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(168, 85, 247, 0.4);
+    animation-play-state: paused;
+}
+
+.project-card.hidden {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+    pointer-events: none;
+}
+
+.project-image {
+    height: 200px;
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #581c87 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3.5rem;
+}
+
+.project-icon {
+    height: 200px;
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #581c87 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3.5rem;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-card h3 {
+    font-size: clamp(1.375rem, 2.5vw, 1.75rem);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.01em;
+}
+
+.project-card p {
+    font-size: clamp(1rem, 1.75vw, 1.125rem);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #cbd5e1;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tech-tag {
+    background-color: rgba(124, 58, 237, 0.2);
+    color: #c084fc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.project-link {
+    color: #a855f7;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: #c084fc;
+}
+
+/* Enhanced Pulsating animation for project cards */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), 0 0 0 0 rgba(124, 58, 237, 0.4);
+    }
+    50% {
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), 0 0 0 10px rgba(124, 58, 237, 0.1);
+    }
+    100% {
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), 0 0 0 0 rgba(124, 58, 237, 0.4);
+    }
+}
+
+/* Professional Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+}
+
+.skill-category {
+    background: rgba(30, 27, 75, 0.6);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    backdrop-filter: blur(20px);
+}
+
+.skill-category:hover {
+    transform: translateY(-6px);
+}
+
+.skill-category h3 {
+    font-size: clamp(1.25rem, 2.25vw, 1.625rem);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+}
+
+.skill-category p {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    font-weight: 500;
+    line-height: 1.55;
+    margin-bottom: 0.75rem;
+    color: #94a3b8;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill-tag {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.skill-tag:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+}
+
+/* Contact Section */
+.contact {
+    background-color: #0f0f23;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-info h3 {
+    font-size: clamp(1.5rem, 2.75vw, 2rem);
+    margin-bottom: 1.75rem;
+    color: #ffffff;
+}
+
+.contact-info p {
+    font-size: clamp(1.125rem, 2.25vw, 1.375rem);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: #cbd5e1;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #a855f7;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #c084fc;
+}
+
+.contact-link i {
+    width: 20px;
+    text-align: center;
+}
+
+.contact-form {
+    background: #16213e;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.form-group {
+    margin-bottom: 1.75rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-size: clamp(0.875rem, 1.25vw, 1rem);
+    font-weight: 500;
+    color: #f1f5f9;
+    letter-spacing: 0.025em;
+}
+
+.form-group input,
+.form-group textarea {
+    font-size: clamp(1rem, 1.75vw, 1.125rem);
+    line-height: 1.5;
+    font-family: inherit;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid #374151;
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
+    background-color: #1f2937;
+    color: #e2e8f0;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #7c3aed;
+    background-color: #111827;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9ca3af;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Footer */
+.footer {
+    background-color: #0a0a1a;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.footer p {
+    font-size: clamp(0.875rem, 1.25vw, 1rem);
+    color: #94a3b8;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* ============================================
+   NOTIFICATION SYSTEM - User Feedback Messages
+   ============================================ */
+
+/* Notification Container - Fixed positioning for overlay display */
+.notification {
+    position: fixed;           /* Fixed positioning for overlay */
+    top: 100px;               /* Below the navbar */
+    right: 20px;              /* Right side of screen */
+    z-index: 10000;           /* Very high z-index to appear above everything */
+    max-width: 400px;         /* Maximum width for readability */
+    opacity: 0;               /* Start invisible */
+    transform: translateX(100%); /* Start off-screen to the right */
+    transition: all 0.3s ease; /* Smooth slide-in animation */
+}
+
+/* Notification Show State - Visible and positioned */
+.notification.show {
+    opacity: 1;               /* Fully visible */
+    transform: translateX(0); /* Slide into position */
+}
+
+/* Notification Content Container */
+.notification-content {
+    display: flex;            /* Flexbox for icon, text, and close button layout */
+    align-items: center;      /* Vertically centers content */
+    gap: 12px;                /* Space between elements */
+    padding: 15px 18px;       /* Internal padding */
+    border-radius: 8px;       /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    backdrop-filter: blur(15px); /* Glassmorphism effect */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    font-size: 14px;          /* Readable font size */
+    font-weight: 500;         /* Medium weight for emphasis */
+}
+
+/* Success Notification Styling */
+.notification-success .notification-content {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.9), rgba(22, 163, 74, 0.9));
+    /* Green gradient background for success messages */
+    color: white;             /* White text for contrast */
+    border-color: rgba(34, 197, 94, 0.3); /* Green border */
+}
+
+/* Error Notification Styling */
+.notification-error .notification-content {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.9), rgba(220, 38, 38, 0.9));
+    /* Red gradient background for error messages */
+    color: white;             /* White text for contrast */
+    border-color: rgba(239, 68, 68, 0.3); /* Red border */
+}
+
+/* Info Notification Styling */
+.notification-info .notification-content {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(37, 99, 235, 0.9));
+    /* Blue gradient background for info messages */
+    color: white;             /* White text for contrast */
+    border-color: rgba(59, 130, 246, 0.3); /* Blue border */
+}
+
+/* Notification Icon Styling */
+.notification-content i:first-child {
+    font-size: 18px;          /* Larger icon size */
+    flex-shrink: 0;           /* Prevents icon from shrinking */
+}
+
+/* Notification Text Content */
+.notification-content span {
+    flex: 1;                  /* Takes up remaining space */
+    line-height: 1.4;         /* Comfortable line height */
+}
+
+/* Notification Close Button */
+.notification-close {
+    background: none;         /* No background */
+    border: none;             /* No border */
+    color: inherit;           /* Inherits text color */
+    cursor: pointer;          /* Indicates clickable */
+    padding: 4px;             /* Small padding for click area */
+    border-radius: 4px;       /* Rounded corners */
+    transition: background-color 0.2s ease; /* Smooth hover transition */
+    flex-shrink: 0;           /* Prevents button from shrinking */
+}
+
+/* Close Button Hover Effect */
+.notification-close:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+}
+
+/* Close Button Icon */
+.notification-close i {
+    font-size: 12px;          /* Small close icon */
+}
+
+/* Quantum Banner Container */
+.quantum-banner {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(135deg, #0a0a14 0%, #1a1a2e 50%, #16213e 100%);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(124, 58, 237, 0.3);
+}

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<!-- HTML5 DOCTYPE declaration - tells browser this is an HTML5 document -->
+<html lang="en">
+<!-- Root HTML element with language attribute for accessibility and SEO -->
+<head>
+    <!-- HEAD section contains metadata about the document (not visible to users) -->
+    <meta charset="UTF-8">
+    <!-- Character encoding - UTF-8 supports all international characters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Viewport meta tag for responsive design - ensures proper scaling on mobile devices -->
+    <title>Marx Wiström - Backend Web Developer Portfolio</title>
+    <!-- Page title shown in browser tab and search engine results -->
+    
+    <!-- CSS STYLESHEETS - External resources for styling -->
+    <link rel="stylesheet" href="src/css/styles.css">
+    <!-- Main custom stylesheet for portfolio styling -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN - provides icons (envelope, LinkedIn, GitHub icons) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Inter font family with multiple weights for typography -->
+    
+    <!-- EmailJS CDN - Service for sending emails from client-side JavaScript -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- NAVIGATION BAR - Fixed header that stays at top when scrolling -->
+    <nav class="navbar">
+        <!-- Semantic <nav> element for main navigation - improves accessibility -->
+        <div class="nav-container">
+            <!-- Container div for responsive layout and centering -->
+            <div class="nav-logo">
+                <!-- Logo/brand section of navigation -->
+                <a href="#" onclick="window.location.reload(); return false;" class="logo-link">
+                    <h2 class="logo-text">Marx Wiström - Dev</h2>
+                    <!-- H2 heading for logo text - maintains heading hierarchy -->
+                </a>
+            </div>
+            
+            <!-- MAIN NAVIGATION MENU -->
+            <ul class="nav-menu">
+                <!-- Unordered list for navigation items - semantic structure -->
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                    <!-- Anchor links with # for smooth scrolling to sections -->
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            
+            <!-- MOBILE HAMBURGER MENU -->
+            <div class="hamburger">
+                <!-- Three span elements create the hamburger icon lines -->
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <!-- JavaScript will toggle these to create animated menu icon -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION - Main landing area with introduction -->
+    <section id="home" class="hero">
+        <!-- Semantic <section> with ID for navigation targeting -->
+        <div class="hero-container">
+            <!-- Grid container for two-column layout (content + image) -->
+            <div class="hero-content">
+                <!-- Left column: Text content and call-to-action buttons -->
+                <h1 class="hero-title">
+                    <!-- Main page heading (H1) - most important for SEO -->
+                    Hi, I'm <span class="highlight">Marx Wiström</span>
+                    <!-- Span for styling specific text differently -->
+                </h1>
+                <p class="hero-subtitle">Backend Web Developer</p>
+                <!-- Subtitle describing profession -->
+                <p class="hero-description">
+                    <!-- Longer description paragraph -->
+                    Passionate about creating robust, scalable backend solutions and APIs. 
+                    Currently studying to become a professional web developer.
+                </p>
+                <div class="hero-buttons">
+                    <!-- Container for call-to-action buttons -->
+                    <a href="#projects" class="btn btn-primary"><span>View My Work</span></a>
+                    <!-- Primary CTA button - links to projects section -->
+                    <a href="#contact" class="btn btn-secondary"><span>Get In Touch</span></a>
+                    <!-- Secondary CTA button - links to contact form -->
+                    <!-- Span elements inside buttons for advanced CSS styling effects -->
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Right column: Profile image/logo -->
+                <img src="./src/MARX-GIT.png" alt="Marx Wiström Logo" class="profile-logo">
+                <!-- Image with proper alt text for accessibility -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION - Personal information and statistics -->
+    <section id="about" class="about">
+        <!-- Section with ID for navigation and unique styling -->
+        <div class="container">
+            <!-- Standard container for consistent page width -->
+            <h2 class="section-title">About Me</h2>
+            <!-- Section heading (H2) - maintains proper heading hierarchy -->
+            <div class="about-content">
+                <!-- Grid container for text and stats layout -->
+                <div class="about-text">
+                    <!-- Text content area -->
+                    <p>
+                        <!-- Paragraph describing background and experience -->
+                        I'm a dedicated backend web development student with a passion for creating 
+                        efficient, scalable server-side applications. My journey in web development 
+                        has equipped me with a solid foundation in various backend technologies and frameworks.
+                    </p>
+                    <p>
+                        <!-- Second paragraph with additional details -->
+                        Through my educational projects, I've gained hands-on experience in database design, 
+                        API development, server management, and modern backend architectures. I'm always 
+                        eager to learn new technologies and tackle challenging problems.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <!-- Statistics/achievements section -->
+                    <div class="stat">
+                        <!-- Individual stat item -->
+                        <h3 id="projects-count">0</h3>
+                        <!-- Number display (animated by JavaScript) -->
+                        <p>Projects Completed</p>
+                        <!-- Stat label -->
+                    </div>
+                    <div class="stat">
+                        <h3 id="technologies-count">0</h3>
+                        <!-- ID allows JavaScript to target and animate this number -->
+                        <p>Technologies Learned</p>
+                    </div>
+                    <div class="stat">
+                        <h3 id="study-hours">500+</h3>
+                        <!-- Static number with + symbol -->
+                        <p>Study Hours</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION - Portfolio showcase with filtering -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            
+            <!-- PROJECT FILTER BUTTONS -->
+            <div class="projects-filter">
+                <!-- Filter controls for project categories -->
+                <button class="filter-btn active" data-filter="all">All</button>
+                <!-- Active class shows current selection, data-filter used by JavaScript -->
+                <button class="filter-btn" data-filter="api">APIs</button>
+                <button class="filter-btn" data-filter="database">Database</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+                <button class="filter-btn" data-filter="microservices">Microservices</button>
+                <!-- Data attributes allow JavaScript to filter projects by category -->
+            </div>
+            
+            <!-- PROJECT GRID CONTAINER -->
+            <div class="projects-grid" id="projects-grid">
+                <!-- Projects will be dynamically loaded here -->
+                <!-- JavaScript will populate this container with project cards -->
+                <!-- Empty container allows for dynamic content loading -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION - Technical competencies organized by category -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technical Expertise</h2>
+                <p class="section-subtitle">Comprehensive backend development skills with modern technologies and best practices</p>
+            </div>
+            <div class="skills-grid">
+                <!-- Grid layout for skill categories -->
+                
+                <!-- BACKEND DEVELOPMENT CATEGORY -->
+                <div class="skill-category">
+                    <h3>Backend Development</h3>
+                    <p>Server-side programming languages used in actual projects</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+                
+                <!-- FRAMEWORKS & LIBRARIES CATEGORY -->
+                <div class="skill-category">
+                    <h3>Frameworks & Libraries</h3>
+                    <p>Production frameworks implemented in portfolio projects</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Express</span>
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">.NET Core</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">Socket.io</span>
+                    </div>
+                </div>
+                
+                <!-- DATABASE SYSTEMS CATEGORY -->
+                <div class="skill-category">
+                    <h3>Database Systems</h3>
+                    <p>Database technologies used in real project implementations</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Redis</span>
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">ClickHouse</span>
+                        <span class="skill-tag">Elasticsearch</span>
+                    </div>
+                </div>
+                
+                <!-- CLOUD & DEVOPS CATEGORY -->
+                <div class="skill-category">
+                    <h3>Cloud & DevOps</h3>
+                    <p>Cloud platforms and containerization used in projects</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">PL/pgSQL</span>
+                        <span class="skill-tag">Performance Tuning</span>
+                        <span class="skill-tag">Indexing</span>
+                    </div>
+                </div>
+                
+                <!-- API & INTEGRATION CATEGORY -->
+                <div class="skill-category">
+                    <h3>API & Integration</h3>
+                    <p>Authentication, payment processing, and real-time communication</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">JWT</span>
+                        <span class="skill-tag">OAuth2</span>
+                        <span class="skill-tag">WebSocket</span>
+                        <span class="skill-tag">Stripe API</span>
+                        <span class="skill-tag">Stripe</span>
+                        <span class="skill-tag">Apache Kafka</span>
+                    </div>
+                </div>
+                
+                <!-- FRONTEND DEVELOPMENT CATEGORY -->
+                <div class="skill-category">
+                    <h3>Frontend Development</h3>
+                    <p>Modern web technologies for interactive user interfaces</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">Responsive Design</span>
+                        <span class="skill-tag">Animations</span>
+                        <span class="skill-tag">Canvas API</span>
+                        <span class="skill-tag">3D Graphics</span>
+                        <span class="skill-tag">Data Visualization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION - Contact information and form -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <!-- Two-column layout: info + form -->
+                
+                <!-- CONTACT INFORMATION COLUMN -->
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>
+                        I'm always interested in discussing new opportunities and projects. 
+                        Feel free to reach out if you'd like to work together!
+                    </p>
+                    
+                    <!-- SOCIAL/CONTACT LINKS -->
+                    <div class="contact-links">
+                        <!-- Email link with mailto protocol -->
+                        <a href="mailto:marxwistrom@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                            <!-- Font Awesome email icon -->
+                            <span>marxwistrom</span>
+                            <!-- Display text for email -->
+                        </a>
+                        
+                        <!-- LinkedIn profile link -->
+                        <a href="https://linkedin.com/in/marxwistrom179" class="contact-link" target="_blank">
+                            <!-- target="_blank" opens link in new tab -->
+                            <i class="fab fa-linkedin"></i>
+                            <!-- Font Awesome LinkedIn icon -->
+                            <span>LinkedIn Profile</span>
+                        </a>
+                        
+                        <!-- GitHub profile link -->
+                        <a href="https://github.com/marxwistrom" class="contact-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                            <!-- Font Awesome GitHub icon -->
+                            <span>GitHub Profile</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- CONTACT FORM COLUMN -->
+                <div class="contact-form">
+                    <!-- HTML form for user messages -->
+                    <form id="contact-form">
+                        <!-- Form ID allows JavaScript to handle submission -->
+                        
+                        <!-- NAME INPUT FIELD -->
+                        <div class="form-group">
+                            <!-- Form group wrapper for styling and spacing -->
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <!-- Text input with validation (required attribute) -->
+                            <!-- ID and name attributes for form processing -->
+                        </div>
+                        
+                        <!-- EMAIL INPUT FIELD -->
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            <!-- Email input type provides built-in validation -->
+                        </div>
+                        
+                        <!-- MESSAGE TEXTAREA FIELD -->
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                            <!-- Textarea for longer text input, rows attribute sets initial height -->
+                        </div>
+                        
+                        <!-- SUBMIT BUTTON -->
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <!-- Submit button triggers form submission event -->
+                        <!-- Uses same button styling as hero section buttons -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER - Copyright and additional information -->
+    <footer class="footer">
+        <!-- Semantic footer element for page footer content -->
+        <div class="container">
+            <p>&copy; 2024 Marx Wiström. All rights reserved.</p>
+            <!-- Copyright notice with HTML entity for copyright symbol -->
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT - External script for interactivity -->
+    <script src="src/js/script.js"></script>
+    <!-- Links to external JavaScript file for:
+         - Mobile menu toggle functionality
+         - Smooth scrolling navigation
+         - Project filtering
+         - Form handling
+         - Animation counters for stats
+         - Any other interactive features -->
+</body>
+</html>

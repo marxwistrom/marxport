@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Development Projects - Marx Wiström</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #7c3aed, #a855f7);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(124, 58, 237, 0.2);
+            border-color: rgba(124, 58, 237, 0.3);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .project-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #f8fafc;
+        }
+
+        .project-description {
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(124, 58, 237, 0.2);
+            color: #a855f7;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(124, 58, 237, 0.3);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #f8fafc;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #a855f7;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #7c3aed;
+        }
+
+        .category-section {
+            margin-bottom: 3rem;
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #a855f7;
+            border-bottom: 2px solid rgba(124, 58, 237, 0.3);
+            padding-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .project-card {
+                padding: 1.5rem;
+            }
+
+            .project-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">
+            ← Back to Portfolio
+        </a>
+
+        <div class="header">
+            <h1>Backend Development Projects</h1>
+            <p>Comprehensive documentation for Marx Wiström's backend development projects, showcasing expertise across multiple technologies and architectural patterns.</p>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-title">Database & Analytics Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card" id="inventory-database">
+                    <div class="project-header">
+                        <div class="project-icon">🗄️</div>
+                        <h3 class="project-title">Inventory Database System</h3>
+                    </div>
+                    <p class="project-description">Advanced PostgreSQL database design with complex queries, stored procedures, triggers, and performance optimization for large datasets.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">PL/pgSQL</span>
+                        <span class="tech-tag">Performance Tuning</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="readme1.md" class="btn btn-primary">📖 View Documentation</a>
+                    </div>
+                </div>
+
+                <div class="project-card" id="analytics-backend">
+                    <div class="project-header">
+                        <div class="project-icon">📊</div>
+                        <h3 class="project-title">Analytics Data Backend</h3>
+                    </div>
+                    <p class="project-description">High-performance analytics backend with FastAPI, ClickHouse, Apache Kafka for real-time metrics and data visualization support.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">ClickHouse</span>
+                        <span class="tech-tag">Apache Kafka</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="readme2.md" class="btn btn-primary">📖 View Documentation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-title">API Development Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card" id="ecommerce-api">
+                    <div class="project-header">
+                        <div class="project-icon">🛒</div>
+                        <h3 class="project-title">E-Commerce REST API</h3>
+                    </div>
+                    <p class="project-description">Comprehensive Node.js/Express backend API with user authentication, product management, order processing, and Stripe payment integration.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Stripe</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="readme3.md" class="btn btn-primary">📖 View Documentation</a>
+                    </div>
+                </div>
+
+                <div class="project-card" id="blog-content-api">
+                    <div class="project-header">
+                        <div class="project-icon">📝</div>
+                        <h3 class="project-title">Blog Content API</h3>
+                    </div>
+                    <p class="project-description">Laravel-based RESTful API for blog platform with content management, Elasticsearch search, commenting system, and admin dashboard.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Laravel</span>
+                        <span class="tech-tag">Elasticsearch</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="readme6.md" class="btn btn-primary">📖 View Documentation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-title">Full-Stack Applications</h2>
+            <div class="projects-grid">
+                <div class="project-card" id="task-management">
+                    <div class="project-header">
+                        <div class="project-icon">✅</div>
+                        <h3 class="project-title">Task Management System</h3>
+                    </div>
+                    <p class="project-description">Django full-stack application with real-time updates, user roles, project collaboration, WebSocket integration, and deadline tracking.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">WebSocket</span>
+                        <span class="tech-tag">Redis</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="readme4.md" class="btn btn-primary">📖 View Documentation</a>
+                    </div>
+                </div>
+
+                <div class="project-card" id="chat-backend">
+                    <div class="project-header">
+                        <div class="project-icon">💬</div>
+                        <h3 class="project-title">Real-time Chat Backend</h3>
+                    </div>
+                    <p class="project-description">Scalable Node.js chat application with Socket.io WebSocket connections, message persistence, user presence tracking, and room-based messaging.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Socket.io</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Redis</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="readme7.md" class="btn btn-primary">📖 View Documentation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-title">Microservices</h2>
+            <div class="projects-grid">
+                <div class="project-card" id="authentication-microservice">
+                    <div class="project-header">
+                        <div class="project-icon">🔐</div>
+                        <h3 class="project-title">Authentication Microservice</h3>
+                    </div>
+                    <p class="project-description">Spring Boot authentication service with JWT tokens, OAuth2 integration, role-based access control, and session management for distributed systems.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Spring Boot</span>
+                        <span class="tech-tag">JWT</span>
+                        <span class="tech-tag">OAuth2</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="readme5.md" class="btn btn-primary">📖 View Documentation</a>
+                    </div>
+                </div>
+
+                <div class="project-card" id="payment-processing">
+                    <div class="project-header">
+                        <div class="project-icon">💳</div>
+                        <h3 class="project-title">Payment Processing Service</h3>
+                    </div>
+                    <p class="project-description">.NET Core secure microservice for payment processing with multiple gateway integration (Stripe, PayPal), fraud detection, and PCI compliance.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">.NET Core</span>
+                        <span class="tech-tag">Azure</span>
+                        <span class="tech-tag">Stripe</span>
+                        <span class="tech-tag">SQL Server</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="readme8.md" class="btn btn-primary">📖 View Documentation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
